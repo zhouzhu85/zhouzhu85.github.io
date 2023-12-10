@@ -28,3 +28,13 @@ Spring框架中有一个@Scope注解，默认的值就是singleton，单例的�
 - 异常捕获处理，自己处理了异常，没有抛出，解决方法：手动抛出异常
 - 抛出检查异常，解决方法：rollbackFor属性为Exception
 - 非public方法导致的事务失效，解决方法：改为public
+
+## Spring的bean的生命周期
+- 通过BeanDefinition获取bean的定义信息
+- 调用构造函数实例化bean
+- bean的依赖注入
+- 处理Aware接口（BeanNameAware、BeanFactoryAware、ApplicationContextAware）
+- Bean的后置处理器BeanPostProcessor-前置
+- 初始化方法（InitializingBean、ini-method）
+- Bean的后置处理器BeanPostProcessor-后置
+- 销毁bean
