@@ -38,3 +38,59 @@ Spring框架中有一个@Scope注解，默认的值就是singleton，单例的�
 - 初始化方法（InitializingBean、ini-method）
 - Bean的后置处理器BeanPostProcessor-后置
 - 销毁bean
+
+## Spring中的循环引用
+- 循环依赖：循环依赖其实就是循环引用，也就是两个或两个以上的bean互相持有对方，最终形成闭环。比如A依赖于B，B依赖于A
+- 循环依赖在spring中是允许存在，spring框架依据三级缓存已经解决了大部分的循环依赖
+    - 一级缓存：单例池，缓存已经经历了完整的生命周期，已经初始化完成的bean对象
+    - 二级缓存：缓存早期的bean对象（生命周期还没走完）
+    - 三级缓存：缓存的是ObjectFactory，表示对象工厂，用来创建某个对象的
+![img.png](../images/spring_xunhuanyinyong.png)
+
+## 构造方法出现了循环依赖怎么解决？
+A依赖于B，B依赖于A，注入方式是构造函数
+原因：由于bean的生命周期中构造函数是第一个执行的，spring框架并不能解决构造函数的依赖注入
+解决方案：使用@Lazy进行懒加载，什么时候需要对象再进行bean对象的创建
+![img.png](../images/spring1.png)
+
+## SpringMvc的执行流程知道吗
+### 视图版本的MVC
+1. 用户发送出请求到前端控制器DispatcherServlet
+2. DispatcherServlet收到请求调用HandlerMapping（处理器映射器）
+3. HandlerMapping找到具体的处理器，生成处理器对象及处理器拦截器（如果有），再一起返回给DispatcherServlet
+4. DispatcherServlet调用HandlerAdapter（处理器适配器）
+5. HandlerAdapter经过适配调用具体的处理器（Handler/Controller）
+6. Controller执行完成返回ModelAndView对象
+7. HandlerAdapter将Controller执行结果ModelAndView返回给DispatcherServlet
+8. DispatcherServlet将ModelAndView传给ViewReslover（视图解析器）
+9. ViewReslover解析后返回具体View（视图）
+10. DispatcherServlet根据View进行渲染视图（即将模型数据填充至）
+11. DispatcherServlet响应用户
+
+### 前后端开发，接口开发的MVC
+1. 用户发送出请求到前端控制器DisPatcherServlet
+2. DispatcherServlet收到请求调用HandlerMapping（处理器映射器）
+3. HandlerMapping找到具体的处理器，生成处理器对象及处理器拦截器，再一起返回给DispatchServlet
+4. DispatcherServlet调用HandlerAdapter（处理器适配器）
+5. HandlerAdapter经过适配调用具体的处理器（handler/Controller）
+6. 方法上添加了@ResponseBody
+7. 通过HttpMessageConverter来返回结果转化为Json并响应 
+
+## SpringBoot自动配置原理
+1. 在SpringBoot项目中的引导类上有一个注解@SpringBootApplication，这个注解是对三个注解进行了封装，分别是：
+   - @SpringBootConfiguration
+   - @EnableAutoConfiguration
+   - @ComponentScan
+2. 其中@EnableAutoConfiguration是实现自动化配置的核心注解。该注解通过@import注解导入对应的配置选择器。
+内部就是读取了该项目和该项目引用的jar包的classpath路径下META-INF/spring.factories文件中的所配置的类的全类名，在这些配置类中所定义的Bean会根据条件注解所指定的条件来决定是否需要将其导入到Spring容器中。
+3. 条件判断会有像ConditionalOnClass这样的注解，判断是否有对应的class文件，如果有则加载该类，把这个配置类的所有的Bean放入spring容器中使用。
+![img.png](../images/spring2.png)
+
+## Spring的常见注解有哪些？
+![img.png](../images/spring3.png)
+
+## SpringMVC的常见注解有哪些？
+![img.png](../images/spring4.png)
+
+## SpringBoot常见注解有哪些？
+![img.png](../images/spring5.png)
