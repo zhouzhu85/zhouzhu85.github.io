@@ -30,7 +30,7 @@ top: 1
 - **Docker**：熟悉Docker的使用和镜像生成部署
 - **Devops**：熟练掌握Jenkins，有实际的项目发布经验
 - **消息中间件**：熟练掌握RocketMQ，熟悉其原理
-- **开发工具**：熟练使用Maven、Git、IDEA、Maven、Postman等开发工具
+- **开发工具**：熟练使用Maven、Git、IDEA、Maven、Postman等开发工具 
 - **前端**：熟练掌握HTML5、Javascript、Ajax，有vue的实际开发经验
 
 ## 工作经历
