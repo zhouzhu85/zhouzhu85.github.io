@@ -1,12 +1,11 @@
 ---
 layout: _post
-title: Spring面试题
+title: Spring
 date: 2023-12-08 22:18:00
 tags:
   - Spring
-  - 面试题
 category: 
-  - Java面试题
+  - Java
   - Spring
 ---
 ## Spring框架中的单例bean是线索安全的吗？

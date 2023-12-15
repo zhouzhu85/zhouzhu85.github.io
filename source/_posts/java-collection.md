@@ -1,12 +1,12 @@
 ---
 layout: _post
-title: Java集合面试题
+title: Java集合
 date: 2023-11-30 10:22:50
 tags: 
   - 集合
 category: 
-  - Java面试题
-  - 集合面试题
+  - Java
+  - 集合
 ---
 ## HashMap和Hashtable的区别
 **线程是否安全**：HastMap是非线程安全的，Hashtable是线程安全的，因为Hashtable内部的方法基本都经过synchronized修饰（如果要保证线程安全的话就用ConcurrentHashMap）;

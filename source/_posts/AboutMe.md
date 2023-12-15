@@ -15,8 +15,10 @@ top: 1
 
 - 期待职位：Java开发工程师
 
+- 个人博客：https://zhouzhu85.github.io/
+
 ## 教育经历
-广州科技贸易职业学院，专科，计算机应用技术 2014.09 ~ 2017.06
+专科/计算机应用技术 2014.09 ~ 2017.06
 
 ## 专业技能
 - **Java**：熟练掌握Java基础、集合、并发
@@ -27,7 +29,7 @@ top: 1
 - **Linux**：熟练使用Linux，有Linux下开发和部署的实际经验
 - **Docker**：熟悉Docker的使用和镜像生成部署
 - **Devops**：熟练掌握Jenkins，有实际的项目发布经验
-- **消息中间件**：熟练掌握RocketMQ，了解过其原理
+- **消息中间件**：熟练掌握RocketMQ，熟悉其原理
 - **开发工具**：熟练使用Maven、Git、IDEA、Maven、Postman等开发工具
 - **前端**：熟练掌握HTML5、Javascript、Ajax，有vue的实际开发经验
 

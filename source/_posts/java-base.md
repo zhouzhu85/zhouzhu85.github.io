@@ -1,13 +1,12 @@
 ---
 layout: _post
-title: Java基础面试题整理
+title: Java基础整理
 date: 2023-11-28 15:51:10
 tags: 
   - 基础
-  - 面试题
 category: 
-  - Java面试题
-  - 基础面试题
+  - Java
+  - 基础
 ---
 ## 1.面向对象和面向过程的区别
 
