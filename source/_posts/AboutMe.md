@@ -23,13 +23,13 @@ top: 1
 ## 专业技能
 - **Java**：熟练掌握Java基础、集合、并发
 - **框架**：熟练掌握Spring、SpringMVC、SpringBoot、MyBatis、Hibernate
-- **数据库**：熟练掌握MySQL数据库以及常见的优化手段（索引、SQL优化、读写分离），熟练掌握Redis
-- **微服务**：熟悉Spring Cloud/Spring Cloud Alibaba 全家桶常见组件的使用及其原理
-- **搜索引擎**：熟练掌握Elasticsearch的使用及原理
+- **数据库**：熟练掌握MySQL数据库以及常见的优化手段（索引、SQL优化），熟练掌握Redis
+- **微服务**：熟悉Spring Cloud/Spring Cloud Alibaba 全家桶常见组件的使用
+- **搜索引擎**：熟练掌握Elasticsearch的使用
 - **Linux**：熟练使用Linux，有Linux下开发和部署的实际经验
 - **Docker**：熟悉Docker的使用和镜像生成部署
 - **Devops**：熟练掌握Jenkins，有实际的项目发布经验
-- **消息中间件**：熟练掌握RocketMQ，熟悉其原理
+- **消息中间件**：熟练掌握RocketMQ
 - **开发工具**：熟练使用Maven、Git、IDEA、Maven、Postman等开发工具 
 - **前端**：熟练掌握HTML5、Javascript、Ajax，有vue的实际开发经验
 
