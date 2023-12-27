@@ -24,7 +24,6 @@ top: 1
 - **Java**：熟练掌握Java基础、集合、并发
 - **框架**：熟练掌握Spring、SpringMVC、SpringBoot、MyBatis、Hibernate
 - **数据库**：熟练掌握MySQL数据库以及常见的优化手段（索引、SQL优化），熟练掌握Redis
-- **微服务**：熟悉Spring Cloud/Spring Cloud Alibaba 全家桶常见组件的使用
 - **搜索引擎**：熟练掌握Elasticsearch的使用
 - **Linux**：熟练使用Linux，有Linux下开发和部署的实际经验
 - **Docker**：熟悉Docker的使用和镜像生成部署
