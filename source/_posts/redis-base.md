@@ -1,7 +1,7 @@
 ---
 layout: _post
 title: redis基础
-date: 2023-12-18 21:44:43
+date: 2021-12-18 21:44:43
 tags:
 ---
 ## Redis数据结构
