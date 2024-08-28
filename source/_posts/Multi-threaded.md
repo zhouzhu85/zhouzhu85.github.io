@@ -176,3 +176,53 @@ CAS的全称是：compare and swap（比较再交换），它体现的一种乐�
 
 
 ![img_2.png](img_2.png)
+
+## ReentrantLock实现原理
+ReentrantLock支持可重入锁，调用lock方法获取锁后，再次调用lock，是不会再阻塞，相对于synchronized他具备以下特点：
+- 可中断
+- 可以设置超时时间
+- 可以设置公平锁
+- 支持多个条件变量
+- 与synchronized一样，都支持重入
+
+ReentrantLock主要利用CAS+AQS队列来实现，他支持公平锁和非公平锁，两者实现类似，构造方法接收一个可选的公平参数（默认非公平锁），当设置为true时，表示公平锁，否则为非公平锁，公平锁的效率往往没有非公平锁的效率高，在许多线程访问的情况下，公平锁表现出较低的吞吐量
+
+![img_4.png](img_4.png)
+
+![img_5.png](img_5.png)
+
+exclusiveOwnerThread 表示当前获取锁的线程
+
+## synchronized和lock有什么区别
+- **语法层面**
+  - synchronized是关键字，源码在jvm中，用c++实现
+  - lock接口，源码是由jdk提供，用java实现
+  - 使用synchronized时，退出同步代码块锁会自动释放，而使用lock时，需要手动调用unlock方法释放锁
+- **功能层面**
+  - 二者均属于悲观锁，都具备基本的互斥、同步、锁重入功能
+  - lock 提供了许多synchronized不具备的功能，例如公平锁、可打断、可超时、多条件变量
+  - lock 有适合不同场景的实现，如ReentrantLock，ReentrantReadWriteLock(续写锁)
+- **性能层面**
+  - 在没有竞争时，synchronized做了很多优化，如偏向锁、轻量级锁、性能不错
+  - 在竞争激烈时，lock的实现通常会提供更好的性能
+
+## 死锁产生的条件是什么
+一个线程需要同时获取多把锁，这时就容易发生死锁
+
+### 如何进行死锁诊断
+- 当程序出现死锁现象，我们可以使用jdk自带的工具：jps和jstack
+- jps：输出JVM中运行的进程状态信息
+- jstack：查看java进程内线程的堆栈信息，查看日志，检查是否死锁，如果有死锁现象，需要查看具体代码分析后，可修复
+- 可视化工具jconsole、visualVm也可以检查死锁问题
+
+## concurrentHashMap
+1. 底层数据结构：
+    - jdk1.7底层采用分段的数据+链表实现
+    - jdk1.8采用的数据结构跟hashMap1.8的结构一样，数据+链表/红黑树
+2. 加锁的方式
+    - jdk1.7采用segment分段锁，底层使用的是ReentrantLock
+    - jdk1.8采用cas添加新节点，采用synchronized锁定链表或红黑树的首节点，相对segment分段锁粒度更细，性能更好
+
+![img_6.png](img_6.png)
+
+![img_7.png](img_7.png)
