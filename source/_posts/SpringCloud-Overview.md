@@ -20,7 +20,7 @@ category:
 - Nacos 注册中心/配置中心
 - Ribbon 负责均衡
 - Feign 服务调用
-- Sentinel 服务调用
+- Sentinel 服务限流
 - Gateway 服务网关
 
 ## 服务注册和发现是什么意思？Spring Cloud 如何实现服务注册发现？
